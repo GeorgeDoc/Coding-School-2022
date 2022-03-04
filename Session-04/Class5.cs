@@ -20,18 +20,18 @@ namespace Session_04
         {
             int temp = 0;
 
-            for(int i = 0; i < array.Length-1; i++)
-            {
-                for (int j = array.Length-1; j > i; --j)
-                {
-                    if(array[j] < array[j-1])
-                    {
-                        temp = array[j];
-                        array[j - 1] = array[j];
-                        array[j] = temp;
-                    }
-                }
-            }
+            //for(int i = 0; i < array.Length-1; i++)
+            //{
+            //    for (int j = array.Length-1; j > i; --j)
+            //    {
+            //        if(array[j] < array[j-1])
+            //        {
+            //            temp = array[j];
+            //            array[j - 1] = array[j];
+            //            array[j] = temp;
+            //        }
+            //    }
+            //}
 
             //for(int i = 1; i < result.Length; i++)
             //for(int i = 1; i < array.Length; i++) 
@@ -45,6 +45,19 @@ namespace Session_04
             //            array[j] = temp;
             //        }
             //    }
+
+            for (int j = 0; j < array.Length - 1; j++)
+            {
+                for (int i = 0; i < array.Length -1; i++)
+                {
+                    if(array[i] > array[i + 1])
+                    {
+                        temp = array[i + 1];
+                        array[i+1] = array[i];
+                        array[i] = temp;
+                    }
+                }
+            }
             PrintArray(array);
         }
 
