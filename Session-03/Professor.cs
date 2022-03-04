@@ -42,7 +42,7 @@ namespace Session_03
 
         public string GetName()
         {
-            return "Dr. " + Name;
+            return "Dr. " + _name;
         }
 
         public Professor()

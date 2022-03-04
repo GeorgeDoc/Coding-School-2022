@@ -11,9 +11,9 @@ namespace Session_03
         public Guid ID { get; }
 
         public int YearsInService { get; set; }
-        public string Name;
-        public string GetName() { return Name; }
-        public void SetName(string name) { Name = name; }
+        private string _name { get; set; }
+        public string GetName() { return _name; }
+        public void SetName(string name) { _name = name; }
 
         public Institute()
         {

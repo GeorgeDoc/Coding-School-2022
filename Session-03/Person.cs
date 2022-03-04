@@ -10,11 +10,11 @@ namespace Session_03
     {
         public Guid ID { get; }
         public int Age { get; set; }
-        public string Name;
-        public string getName() { return Name; }
+        protected string _name;
+        public string getName() { return _name; }
         public void setName(string name)
         {
-            Name = name;
+            _name = name;
         }
 
         public Person()
