@@ -11,7 +11,7 @@ namespace Session_03
         public string Rank { get; set; }
         public void SetRank(string rank)
         {
-            while (rank != null)
+            while (rank != null) //infinite loop
             {
                 if (rank.ToLower().Equals("full") | rank.ToLower().Equals("associate") | rank.ToLower().Equals("assistant professor"))
                 {
