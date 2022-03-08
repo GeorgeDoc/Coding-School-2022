@@ -18,24 +18,21 @@ namespace Session_05
         }
 
 
-        private void Action(ActionRequest.ActionEnum actionEnum, string Input) //TODO: find a more elegant way than ActionRequest.ActionEnum
+        private void Action(ActionRequest.ActionEnum actionEnum, string Input) //TODO: more elegant way than ActionRequest.ActionEnum??
         {
-            MessageLogger logger = new MessageLogger();
-
             switch (actionEnum)
             {
                 case ActionRequest.ActionEnum.Convert: //TODO: separate the if from the function
-                    //ConvertBinary(Input);
                     Message BinaryMessage = new Message();
                     BinaryMessage._Message = ConvertBinary(Input).ToString();
-                    logger.Write(BinaryMessage);
+                    Logger.Write(BinaryMessage);
                     break;
                 case ActionRequest.ActionEnum.UpperCase:
                     if (CheckMultipleWords(Input))
                     {
                         Message LargesMessage = new MessageLogger();
                         LargesMessage._Message = FindLargestWord(Input).ToString();
-                        logger.Write(LargesMessage);
+                        Logger.Write(LargesMessage);
                     }
                     break;
                 case ActionRequest.ActionEnum.Reverse:
@@ -43,13 +40,13 @@ namespace Session_05
                     {
                         Message ReverseMessage = new Message();
                         ReverseMessage._Message = ReverseString(Input).ToString();
-                        logger.Write(ReverseMessage);
+                        Logger.Write(ReverseMessage);
                     }
                     break;
                 default:
                     Message ErrorMessage = new Message();
                     ErrorMessage._Message = "An error occured, run!!";
-                    logger.Write(ErrorMessage);
+                    Logger.Write(ErrorMessage);
                     break;
             }
         }
@@ -103,14 +100,10 @@ namespace Session_05
 
         public string ReverseString(string input)
         {
-            char[] chars = input.ToCharArray();
-            char[] charResult = new char[chars.Length];
-            for (int i = 0, j = input.Length - 1; i < input.Length; i++, j--)
-            {
-                charResult[i] = chars[j];
-            }
-            string stringResult = new String(charResult);
-            return stringResult;
+            if (input.Length > 0)
+                return input[input.Length - 1] + ReverseString(input.Substring(0, input.Length - 1));              
+            else
+                return input;
         }
 
 

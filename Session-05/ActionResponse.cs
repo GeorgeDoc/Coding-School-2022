@@ -8,7 +8,7 @@ namespace Session_05
 {
     internal class ActionResponse : AbstractMicroserviceClass
     {
-        //public Guid ResponseID { get; set; }
+        //public Guid ResponseID { get; }
         public Guid RequestID { get; } //must be the same as RequestID of ActionRequest
 
 
