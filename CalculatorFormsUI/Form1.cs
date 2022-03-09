@@ -58,11 +58,6 @@ namespace CalculatorFormsUI
             textBox1.Text = string.Empty;
         }
 
-        private void button18_Click(object sender, EventArgs e)
-        {
-            textBox1.Text += "=";
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
@@ -102,6 +97,12 @@ namespace CalculatorFormsUI
             {
                 textBox1.Text += "!"; // TODO: place symbol before last entry in the decimal array
             }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "=\n";
+            //var a = new Calculation(); 
         }
     }
 }

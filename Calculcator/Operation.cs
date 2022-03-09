@@ -19,9 +19,6 @@ namespace Calculcator
     internal class Operation
     {
         public decimal[] Operands = new decimal[2];
-        //public decimal LeftOperand { get; set; }
-        //public decimal RightOperand { get; set; }
-
 
         public virtual decimal[] ConvertToDec(string str)
         {
@@ -30,20 +27,33 @@ namespace Calculcator
 
             try
             {
-                //LeftOperand = Convert.ToDecimal(input[0]);
-                //LeftOperand = Convert.ToDecimal(input[1]);
                 for(int i=0; i<input.Length; i++)
                 {
                     Operands[i] = Convert.ToDecimal(input[i]);
-                }
-                //Operands[0] = Convert.ToDecimal(input[0]);
-                //Operands[1] = Convert.ToDecimal(input[1]);                
+                }               
             } 
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
             return Operands;
+        }
+
+        public char[] GetOperators(string str)
+        {
+            char[] separator = { '+', '-', '*', '/', '^', '!' };
+            string[] input = str.Split(separator);
+
+            char[] operators = new char[input.Length];
+            for (int i = 0; i < str.Length; i++)
+            {
+                for (int j = 0; j < input.Length; j++)
+                    if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/' || str[i] == '^' || str[i] == '!')
+                    {
+                        operators[j] = str[i];
+                    }
+            }
+            return operators;
         }
 
         public Operation()
