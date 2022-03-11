@@ -32,11 +32,5 @@ namespace Session_07_08
             Business bus = new Business();
 
         }
-
-        private void openToolStripMenuItem4_Click(object sender, EventArgs e) // Open Course Form
-        {
-            CourseForm form = new CourseForm();
-            form.Show();
-        }
     }
 }

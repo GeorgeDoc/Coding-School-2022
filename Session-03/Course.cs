@@ -19,12 +19,5 @@ namespace Session_03
             Code = String.Empty;
             Subject = String.Empty;
         }
-
-        public Course(string code, string subject)
-        {
-            ID = Guid.NewGuid();
-            Code = code;
-            Subject = subject;
-        }
     }
 }

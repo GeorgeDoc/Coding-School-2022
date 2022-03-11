@@ -38,14 +38,13 @@
             this.BtnNew = new DevExpress.XtraEditors.SimpleButton();
             this.LblLogo = new DevExpress.XtraEditors.LabelControl();
             this.LblQuote = new DevExpress.XtraEditors.LabelControl();
-            this.listBoxCourse = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.TeCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeSubject.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(257, 69);
+            this.labelControl1.Location = new System.Drawing.Point(12, 62);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(40, 13);
             this.labelControl1.TabIndex = 0;
@@ -53,7 +52,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(257, 43);
+            this.labelControl2.Location = new System.Drawing.Point(12, 36);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(66, 13);
             this.labelControl2.TabIndex = 1;
@@ -61,21 +60,21 @@
             // 
             // TeCode
             // 
-            this.TeCode.Location = new System.Drawing.Point(329, 40);
+            this.TeCode.Location = new System.Drawing.Point(84, 33);
             this.TeCode.Name = "TeCode";
             this.TeCode.Size = new System.Drawing.Size(117, 20);
             this.TeCode.TabIndex = 2;
             // 
             // TeSubject
             // 
-            this.TeSubject.Location = new System.Drawing.Point(329, 66);
+            this.TeSubject.Location = new System.Drawing.Point(84, 59);
             this.TeSubject.Name = "TeSubject";
             this.TeSubject.Size = new System.Drawing.Size(211, 20);
             this.TeSubject.TabIndex = 3;
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(616, 170);
+            this.BtnCancel.Location = new System.Drawing.Point(371, 147);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 39);
             this.BtnCancel.TabIndex = 13;
@@ -83,16 +82,15 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(532, 170);
+            this.BtnSave.Location = new System.Drawing.Point(287, 147);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(75, 39);
             this.BtnSave.TabIndex = 11;
             this.BtnSave.Text = "Save";
-            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // BtnDelete
             // 
-            this.BtnDelete.Location = new System.Drawing.Point(341, 170);
+            this.BtnDelete.Location = new System.Drawing.Point(96, 147);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(75, 39);
             this.BtnDelete.TabIndex = 14;
@@ -100,16 +98,15 @@
             // 
             // BtnNew
             // 
-            this.BtnNew.Location = new System.Drawing.Point(257, 170);
+            this.BtnNew.Location = new System.Drawing.Point(12, 147);
             this.BtnNew.Name = "BtnNew";
             this.BtnNew.Size = new System.Drawing.Size(75, 39);
             this.BtnNew.TabIndex = 12;
             this.BtnNew.Text = "New";
-            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
             // LblLogo
             // 
-            this.LblLogo.Location = new System.Drawing.Point(602, 73);
+            this.LblLogo.Location = new System.Drawing.Point(357, 66);
             this.LblLogo.Name = "LblLogo";
             this.LblLogo.Size = new System.Drawing.Size(48, 13);
             this.LblLogo.TabIndex = 15;
@@ -117,28 +114,17 @@
             // 
             // LblQuote
             // 
-            this.LblQuote.Location = new System.Drawing.Point(424, 115);
+            this.LblQuote.Location = new System.Drawing.Point(179, 108);
             this.LblQuote.Name = "LblQuote";
             this.LblQuote.Size = new System.Drawing.Size(92, 13);
             this.LblQuote.TabIndex = 16;
             this.LblQuote.Text = "Cheesy quote here";
             // 
-            // listBoxCourse
-            // 
-            this.listBoxCourse.FormattingEnabled = true;
-            this.listBoxCourse.ItemHeight = 15;
-            this.listBoxCourse.Location = new System.Drawing.Point(12, 39);
-            this.listBoxCourse.Name = "listBoxCourse";
-            this.listBoxCourse.Size = new System.Drawing.Size(187, 169);
-            this.listBoxCourse.TabIndex = 17;
-            this.listBoxCourse.SelectedIndexChanged += new System.EventHandler(this.listBoxCourse_SelectedIndexChanged);
-            // 
-            // CourseForm
+            // Course
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 221);
-            this.Controls.Add(this.listBoxCourse);
+            this.ClientSize = new System.Drawing.Size(458, 214);
             this.Controls.Add(this.LblQuote);
             this.Controls.Add(this.LblLogo);
             this.Controls.Add(this.BtnCancel);
@@ -149,9 +135,8 @@
             this.Controls.Add(this.TeCode);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Name = "CourseForm";
+            this.Name = "Course";
             this.Text = "Course";
-            this.Load += new System.EventHandler(this.CourseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TeCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeSubject.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -171,6 +156,5 @@
         private DevExpress.XtraEditors.SimpleButton BtnNew;
         private DevExpress.XtraEditors.LabelControl LblLogo;
         private DevExpress.XtraEditors.LabelControl LblQuote;
-        private ListBox listBoxCourse;
     }
 }
