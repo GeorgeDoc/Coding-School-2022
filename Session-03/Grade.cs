@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace Session_03
 {
+    [Serializable]
     internal class Grade
     {
         public Guid ID { get; }
         public Guid StudentID { get; }
         public Guid CourseID { get; }
-        public int number { get; set; } //the Grade asked
+        public int value { get; set; } //the Grade asked
 
         public Grade()
         {
             ID = Guid.NewGuid();
+            value = 0;
         }
     }
 }
