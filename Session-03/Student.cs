@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Session_03
 {
-    internal class Student : Person
+    [Serializable]
+    public class Student : Person
     {
         public int RegistrationNumber { get; set; }
         public Course[] courses { get; set; }
 
         public Student()
         {
-
+            RegistrationNumber = 0;
         }
 
         public bool Attend(Course c, DateTime dt)

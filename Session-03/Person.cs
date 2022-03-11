@@ -20,6 +20,8 @@ namespace Session_03
         public Person()
         {
             ID = Guid.NewGuid();
+            Age = 0;
+            _name = String.Empty;
         }
 
         //public string GetThisID() { return ID.ToString(); }

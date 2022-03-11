@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Session_03
 {
-    internal class Professor : Person
+    [Serializable]
+    public class Professor : Person
     {
         public string Rank { get; set; }
         public void SetRank(string rank)
@@ -47,7 +48,7 @@ namespace Session_03
 
         public Professor()
         {
-
+            Rank = String.Empty;
         }
     }
 }
