@@ -13,4 +13,8 @@
     <PackageReference Include="devexpress.win.design" Version="21.2.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Session-03\Session_03.csproj" />
+  </ItemGroup>
+
 </Project>
