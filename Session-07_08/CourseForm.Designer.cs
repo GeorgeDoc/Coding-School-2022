@@ -88,6 +88,7 @@
             this.BtnSave.Size = new System.Drawing.Size(75, 39);
             this.BtnSave.TabIndex = 11;
             this.BtnSave.Text = "Save";
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // BtnDelete
             // 
@@ -150,6 +151,7 @@
             this.Controls.Add(this.labelControl1);
             this.Name = "CourseForm";
             this.Text = "Course";
+            this.Load += new System.EventHandler(this.CourseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TeCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeSubject.Properties)).EndInit();
             this.ResumeLayout(false);
