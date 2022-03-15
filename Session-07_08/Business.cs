@@ -11,6 +11,8 @@ namespace Session_07_08
 {
     internal class Business : Form
     {
+        public static Business bussinessFormInstance; //create an instance to have access to this form
+
         private const string FILE_NAME = "Storage.json";
 
         private const string STUDENT_FILE = "StudentStorage.json";
@@ -24,6 +26,8 @@ namespace Session_07_08
         private const string COURSE_FILE = "CourseStorage.json";
         private Course _course;
         public Course _selectedCourse;
+        public List<Course> Courses { get; set; }
+
 
 
         public void ClearData() // well, sort of
@@ -45,13 +49,20 @@ namespace Session_07_08
         }
 
 
-        CourseForm courseForm = new CourseForm();
+        CourseForm courseForm = CourseForm.courseFormInstance;
         public void CourseOpen()
         {
             CourseForm courseForm = new CourseForm(); //
             courseForm.Show();
         }
 
+        public Course CourseCreate()
+        {
+            Univeristy univeristy = new Univeristy();
+            univeristy.Courses = Courses;
+            Course course = univeristy.CourseAdd();
+            return course;
+        }
         public void CourseSave()
         {
             string json = JsonSerializer.Serialize(_course);
@@ -70,6 +81,20 @@ namespace Session_07_08
             if (_selectedCourse != null)
             {
                 _selectedCourse = CourseForm.courseFormInstance.Courses[CourseForm.courseFormInstance.lbCourses.SelectedIndex];
+                //_selectedCourse = courseForm.Courses[courseForm.lbCourses.SelectedIndex];
+            }
+        }
+        public void ShowCourseList()
+        {
+            CourseForm.courseFormInstance.lbCourses.Items.Clear();
+
+            Univeristy univeristy = new Univeristy();
+            foreach (Course item in univeristy.Courses)
+            {
+                if (item != null)
+                {
+                    courseForm.lbCourses.Items.Add(string.Format("{0}", item.Subject));
+                }
             }
         }
 
@@ -79,13 +104,10 @@ namespace Session_07_08
             return _professor; 
         }
 
-
-        public void ShowCourseList()
-        {
-            listBox.I
+        public Business()        {
+            InitializeComponent();
+            bussinessFormInstance = this; // instance to have access from other forms
         }
-
-        public Business()        {        }
 
         private void InitializeComponent()
         {
