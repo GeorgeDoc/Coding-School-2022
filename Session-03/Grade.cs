@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Session_03
 {
     [Serializable]
-    internal class Grade
+    public class Grade
     {
         public Guid ID { get; }
         public Guid StudentID { get; }

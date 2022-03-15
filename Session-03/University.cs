@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Session_03
 {
-    internal class Univeristy : Institute
+    public class Univeristy : Institute
     {
         //public Student[] Students { get; set; }
         //public Course[] Courses { get; set; }
@@ -26,10 +26,26 @@ namespace Session_03
         public void SetScedule(Guid CourseID, Guid ProfessorID, DateTime datetime) { }
 
 
+        public Course CourseAdd()
+        {
+            Course course = new Course("Course Code", "Course Subject");
+            return course;
+            //return CourseAdd("Course Code", "Course Subject");
+        }
+        //public Course CourseAdd(string code, string subject) 
+        //{
+        //    Course course = new Course();
+        //    //course.Code = code;
+        //    //course.Subject = subject;
+        //    Courses.Add(course);
+        //    return course;
+        //}
+
+
         public Univeristy()
         {
             Students = new List<Student>(new Student[30]); //maybe?
-            Courses = new List<Course>(new Course[20]);
+            Courses = new List<Course>();// (new Course[20]);
             ScheduledCourses = new List<Schedule>(new Schedule[60]);
         }
     }
