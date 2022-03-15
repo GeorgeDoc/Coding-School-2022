@@ -259,7 +259,7 @@
             this.textBox1.Location = new System.Drawing.Point(12, 59);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 77);
+            this.textBox1.Size = new System.Drawing.Size(226, 82);
             this.textBox1.TabIndex = 22;
             // 
             // Form1
