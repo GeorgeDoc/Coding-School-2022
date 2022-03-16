@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coding-School-Team-Project"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Team-Project-Blue", "Team-Project-Blue", "{18C7BB20-E5A3-41A6-A24D-3C5673E98048}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeShop_Library", "CoffeShop_Library\CoffeShop_Library.csproj", "{7D77F087-553B-4785-B756-FB43D9809609}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{B77EB3E9-E86F-4563-824C-7AE3771E683C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B77EB3E9-E86F-4563-824C-7AE3771E683C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B77EB3E9-E86F-4563-824C-7AE3771E683C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D77F087-553B-4785-B756-FB43D9809609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D77F087-553B-4785-B756-FB43D9809609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D77F087-553B-4785-B756-FB43D9809609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D77F087-553B-4785-B756-FB43D9809609}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +100,7 @@ Global
 		{26CC33F0-74E8-4C7E-9750-47C4830BAD02} = {8687CA6B-E8A1-48A9-93C5-FD75A0B64C7E}
 		{D75F286D-3C02-4599-B391-9971366E334A} = {D14945D1-F262-434B-AE32-650EC9CC680B}
 		{B77EB3E9-E86F-4563-824C-7AE3771E683C} = {18C7BB20-E5A3-41A6-A24D-3C5673E98048}
+		{7D77F087-553B-4785-B756-FB43D9809609} = {18C7BB20-E5A3-41A6-A24D-3C5673E98048}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6FA618A-89D9-4277-9BD1-111335703615}

@@ -1,8 +1,8 @@
 namespace Coding_School_Team_Project
 {
-    public partial class Form1 : Form
+    public partial class CoffeeSop : Form
     {
-        public Form1()
+        public CoffeeSop()
         {
             InitializeComponent();
         }
