@@ -1,4 +1,4 @@
-namespace University2._0
+namespace Coding_School_Team_Project
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace University2._0
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new UniversityForm());
+            Application.Run(new Form1());
         }
     }
 }

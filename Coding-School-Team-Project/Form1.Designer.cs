@@ -1,4 +1,4 @@
-﻿namespace University2._0
+﻿namespace Coding_School_Team_Project
 {
     partial class Form1
     {
