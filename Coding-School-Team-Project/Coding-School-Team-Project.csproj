@@ -3,14 +3,10 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <RootNamespace>University2._0</RootNamespace>
+    <RootNamespace>Coding_School_Team_Project</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="devexpress.win.design" Version="21.2.6" />
-  </ItemGroup>
 
 </Project>
