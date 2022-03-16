@@ -1,6 +1,6 @@
 ﻿namespace Coding_School_Team_Project
 {
-    partial class Form1
+    partial class CoffeeSop
     {
         /// <summary>
         ///  Required designer variable.
