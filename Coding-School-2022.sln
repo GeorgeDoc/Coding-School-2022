@@ -29,7 +29,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Session-10", "Session-10", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "University2.0", "University2.0\University2.0.csproj", "{D75F286D-3C02-4599-B391-9971366E334A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coding-School-Team-Project", "Coding-School-Team-Project\Coding-School-Team-Project.csproj", "{B77EB3E9-E86F-4563-824C-7AE3771E683C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blue-Team-Project", "Coding-School-Team-Project\Blue-Team-Project.csproj", "{B77EB3E9-E86F-4563-824C-7AE3771E683C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Team-Project-Blue", "Team-Project-Blue", "{18C7BB20-E5A3-41A6-A24D-3C5673E98048}"
 EndProject
