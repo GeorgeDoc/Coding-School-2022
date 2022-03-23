@@ -16,7 +16,7 @@ namespace Session_15_EF.Configuration {
         public void Configure(EntityTypeBuilder<Transaction> builder) {
             builder.ToTable("Transaction");
             builder.HasKey(transaction => transaction.ID);
-            builder.Property(transaction => transaction.ID).ValueGeneratedOnAdd();
+            //builder.Property(transaction => transaction.ID).ValueGeneratedOnAdd();
 
             builder.Property(transaction => transaction.EmployeeID).IsRequired(true);
             builder.Property(transaction => transaction.CustomerID).IsRequired(true);

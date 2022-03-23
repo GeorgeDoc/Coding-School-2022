@@ -14,11 +14,11 @@ namespace Session_15_EF.Configuration {
             builder.HasKey(trl => trl.ID);
             builder.Property(trl => trl.ID).ValueGeneratedOnAdd();
 
-            builder.Property(trl => trl.ProductID).IsRequired(true);
             builder.Property(trl => trl.Price).IsRequired(true);
             builder.Property(trl => trl.TotalPrice).IsRequired(true);
-            builder.Property(trl => trl.TransID).IsRequired(true);
-            
+            //builder.Property(trl => trl.TransID).IsRequired(true);
+            //builder.Property(trl => trl.ProductID).IsRequired(true);
+
         }
     }
 }

@@ -63,9 +63,21 @@ namespace Classes {
 
         //TransactionLines
         TransactionLine line1 = new TransactionLine() {
-            Price = 6,
+            Price = 3,
             TotalPrice = 6,
-            Discount = false
+            Discount = false,
+        };        
+        TransactionLine line2 = new TransactionLine() {
+            Price = 5,
+            TotalPrice = 10,
+            Discount = true,
+        };
+
+        //Transactions
+        Transaction transaction = new Transaction() {
+            TotalPrice = 10,
+            TransCost = 4,
+            TransLines = new List<TransactionLine>()
         };
     }
 }
