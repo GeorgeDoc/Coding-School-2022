@@ -14,8 +14,8 @@ namespace Session_15_EF.Configuration {
             builder.HasKey(employee => employee.ID);
             builder.Property(employee => employee.ID).ValueGeneratedOnAdd();
 
-            builder.Property(employee => employee.Name).HasMaxLength(50);
-            builder.Property(employee => employee.Surname).HasMaxLength(50);
+            builder.Property(employee => employee.Name).HasMaxLength(40).IsRequired(true);
+            builder.Property(employee => employee.Surname).HasMaxLength(40).IsRequired(true);
         }
     }
 }

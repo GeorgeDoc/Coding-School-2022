@@ -11,7 +11,7 @@ namespace Classes {
         public Guid EmployeeID { get; }
         public double TotalPrice { get; set; }
 
-        public List<TransactionLine> Lines { get; set; }
+        public List<TransactionLine> TransLines { get; set; }
         public enum PaymentMethod { Cash, CreditCard }
         public double TransCost { get; set; }
         public DateTime Date { get; }

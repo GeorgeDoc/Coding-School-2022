@@ -14,6 +14,9 @@ namespace Session_15_EF.Configuration {
             builder.ToTable("Customer");
             builder.HasKey(customer => customer.ID);
             builder.Property(customer => customer.ID).ValueGeneratedOnAdd();
+
+            builder.Property(customer => customer.Code).HasMaxLength(5).IsRequired(true);
+            builder.Property(customer => customer.Description).HasMaxLength(100);
         }
     }
 }
