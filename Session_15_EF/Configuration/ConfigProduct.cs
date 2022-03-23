@@ -14,6 +14,9 @@ namespace Classes {
             builder.ToTable("Product_Category");
             builder.HasKey(x => x.ID);
             builder.Property(x => x.ID).ValueGeneratedOnAdd();
+
+            builder.Property(product => product.Description).HasMaxLength(300);
+            builder.Property(product => product.Description).IsRequired(true);
         }
     }
 }

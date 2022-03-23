@@ -37,11 +37,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeShop_Library", "CoffeS
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Session-15", "Session-15", "{5D399F23-B8CA-4030-BD40-B1D22CBC6E67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF1", "EF1\EF1.csproj", "{29062700-EBC6-4611-A192-0D10A72D03AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormsCoffeeShop", "EF1\FormsCoffeeShop.csproj", "{29062700-EBC6-4611-A192-0D10A72D03AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "Classes\Classes.csproj", "{E8AB9E7E-3ADB-460E-8B27-4CDCA4AFAFCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Classes", "Classes\Classes.csproj", "{E8AB9E7E-3ADB-460E-8B27-4CDCA4AFAFCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Session_15_EF", "Session_15_EF\Session_15_EF.csproj", "{11E1440A-4B12-4DC6-A7B9-70CDB0878FA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session_15_EF", "Session_15_EF\Session_15_EF.csproj", "{11E1440A-4B12-4DC6-A7B9-70CDB0878FA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

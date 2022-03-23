@@ -14,6 +14,8 @@ namespace Session_15_EF.Configuration {
             builder.ToTable("Product_Category");
             builder.HasKey(x => x.ID);
             builder.Property(x => x.ID).ValueGeneratedOnAdd();
+
+            builder.Property(x => x.Description).HasMaxLength(300);
         }
     }
 }
