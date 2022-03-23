@@ -14,7 +14,13 @@ namespace Classes {
         public double TotalPrice { get; set; }
         public double LineCost { get; set; }
 
+        public Guid TransID { get; set; } //foreign key to transaction
+        public Transaction Transaction { get; set; } //to connect with foreigh key
+
         public TransactionLine() {
+            ID = Guid.NewGuid();
+        }
+        public TransactionLine(Product product, int Quantity) {
             ID = Guid.NewGuid();
         }
     }

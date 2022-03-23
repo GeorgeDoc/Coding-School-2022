@@ -16,6 +16,7 @@ namespace Session_15_EF.Configuration {
             builder.Property(x => x.ID).ValueGeneratedOnAdd();
 
             builder.Property(x => x.Description).HasMaxLength(300);
+            builder.Property(x => x.Code).IsRequired(true).HasMaxLength(5);
         }
     }
 }
