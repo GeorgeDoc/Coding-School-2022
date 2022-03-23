@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoffeShop_Library
-{
-    internal class Monthly_Ledger
-    {
+namespace Classes {
+    public class Customer : BaseEntity {
+        public Customer() {
+
+        }
     }
 }
