@@ -18,6 +18,26 @@ body {
     font-family: sans-serif;
 }
 
+button {
+    display: block;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #181c32;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.1rem;
+    border-radius: 0.475rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    text-decoration: none;
+    color: #fff;
+    background-color: #009ef7;
+}
+
 .body-content {
     flex: 1;
     flex-direction: column;
@@ -276,32 +296,6 @@ body {
         color: #fff;
         border-color: #009ef7;
         background-color: #009ef7;
-    }
-
-.button {
-    display: block;
-    font-weight: 500;
-    line-height: 1.5;
-    color: #181c32;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    user-select: none;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.1rem;
-    border-radius: 0.475rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    text-decoration: none;
-}
-
-
-    .button.button-primary {
-        color: #fff;
-        border-color: red;
-        background-color: red;
     }
 
 .btn-primary:hover {
