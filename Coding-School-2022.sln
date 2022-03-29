@@ -43,6 +43,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Classes", "Classes\Classes.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Session_15_EF", "Session_15_EF\Session_15_EF.csproj", "{11E1440A-4B12-4DC6-A7B9-70CDB0878FA3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Session-19", "Session-19", "{D6603048-D78D-4341-9DDB-444C09BFA4BE}"
+	ProjectSection(SolutionItems) = preProject
+		MyIndex.html = MyIndex.html
+		MyStyles.css = MyStyles.css
+		..\..\..\Downloads\Assignment\Assignment-1\profile.png = ..\..\..\Downloads\Assignment\Assignment-1\profile.png
+		..\..\..\Downloads\Assignment\Assignment-1\website.jpg = ..\..\..\Downloads\Assignment\Assignment-1\website.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
