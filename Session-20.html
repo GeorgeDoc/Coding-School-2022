@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="Ses20_Scripts.js"></script>
+    <title>Session 20 - JS</title>
+</head>
+<body>
+    <form id="frmFirst">
+        Enter a string to get the reverse: <input type="text" id="inp" name="input" />
+        <input type="submit" value="Reverse" onclick="RevStr()" />
+        <p id="reversed">Result</p>
+    </form>
+    <br /><br />
+
+    <div>
+        <form id="frmMain" onclick="myClick(event)">
+            <input id="txtSelectedId" type="hidden">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><label for="txtName">Name</label></td>
+                        <td><input id="txtName"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="txtSurname">Surname</label></td>
+                        <td><input id="txtSurname"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="txtAge">Age</label></td>
+                        <td><input id="txtAge" /></td>
+                    </tr>
+                    <tr>
+                        <td>
+                             <fieldset class="genders">
+                                 <legend>Gender</legend>
+                                 <input type="radio" id="rbMale" name="gender" value="Male" checked/>
+                                 <label for="male">Male</label><br>
+                                 <input type="radio" id="rbFemale" name="gender" value="Female" />
+                                 <label for="male">Female</label><br>
+                                 <input type="radio" id="rbOther" name="gender" value="Other" />
+                                 <label for="male">Other</label><br>
+                             </fieldset>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="button" onclick="myClick(event)">Add To List</button>
+                            <button id="btnAddToList" type="button" onclick="addToList()">Add To List</button>
+                            <button id="btnRemoveFromList" type="button" onclick="removeFromList()">Remove</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul id=lstCustomers></ul>
+        </form>
+    </div>
+
+</body>
+</html>

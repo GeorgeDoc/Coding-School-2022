@@ -51,6 +51,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Session-19", "Session-19", 
 		..\..\..\Downloads\Assignment\Assignment-1\website.jpg = ..\..\..\Downloads\Assignment\Assignment-1\website.jpg
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Session-20", "Session-20", "{C18CEB9C-98DC-490F-983D-844A61E9FBAD}"
+	ProjectSection(SolutionItems) = preProject
+		Ses20_Scripts.js = Ses20_Scripts.js
+		Session-20.html = Session-20.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
