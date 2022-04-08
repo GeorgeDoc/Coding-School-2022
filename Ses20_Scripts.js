@@ -36,7 +36,7 @@ function checkPal2(str) {
 }
 
 //4
-function multiply(a, b) { //as given works fine as ling as a and b are numbers
+function multiply(a, b) { //as given works fine as long as a and b are numbers
     return a * b;
 }
 
