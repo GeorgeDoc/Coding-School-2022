@@ -13,7 +13,7 @@ namespace FuelStation.Models {
         public decimal NetValue { get; set; } //final price
         public decimal DiscountPercent { get; set; }
         public decimal DiscountValue { get; set; }
-        public decimal TotalValue { get; set; }
+        public decimal TotalValue { get; set; } // final line price
         public Transaction Transaction { get; set; }
         public Item Item { get; set; }
 

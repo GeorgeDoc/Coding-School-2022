@@ -9,7 +9,7 @@ namespace FuelStation.Models {
         //public int ID { get; set; }
         public Guid Id { get; set; }
         public BaseEntity() {
-                
+            Id = Guid.NewGuid();
         }
     }
 }
