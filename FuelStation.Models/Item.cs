@@ -12,6 +12,8 @@ namespace FuelStation.Models {
         public decimal Price { get; set; }
         public decimal Cost { get; set; }
 
+        public List<TransactionLine> TransactionLines { get; set; }
+
         public Item() {
 
         }
