@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace FuelStation.Models {
+    [Serializable]
     public class Transaction : BaseEntity {
         public DateTime Date { get; set; }
         public Guid EmployeeID { get; set; }    

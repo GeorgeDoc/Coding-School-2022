@@ -16,6 +16,8 @@ namespace FuelStation.EF.Configuration {
             builder.Property(employee => employee.Surname).IsRequired().HasMaxLength(50);
             builder.Property(employee => employee.EmployeeType).IsRequired();
             builder.Property(employee => employee.SallaryPerMonth).IsRequired().HasColumnType("decimal(8,2)");
+            builder.Property(employee => employee.HireDateStart);
+            builder.Property(employee => employee.HireDateEnd);
         }
     }
 }

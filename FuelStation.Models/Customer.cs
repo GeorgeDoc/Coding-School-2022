@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace FuelStation.Models {
     public class Customer : Person{
+
         public string _cardNumber;
         private const string START = "A";   // Making a seperate file for a letter seems a waste. Although now just 1 char, later might be more, so string
 

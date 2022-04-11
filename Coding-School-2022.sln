@@ -71,11 +71,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelStation.Models", "FuelS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelStation.EF", "FuelStation.EF\FuelStation.EF.csproj", "{5938B8F6-E734-4D0A-ADA1-7F0E30D89F6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuelStation.Blazor.Server", "FuelStation.Blazor\Server\FuelStation.Blazor.Server.csproj", "{29D50EF0-2651-4129-857A-7692F2C5D1B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelStation.Blazor.Server", "FuelStation.Blazor\Server\FuelStation.Blazor.Server.csproj", "{29D50EF0-2651-4129-857A-7692F2C5D1B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuelStation.Blazor.Client", "FuelStation.Blazor\Client\FuelStation.Blazor.Client.csproj", "{5D033F31-261A-42BC-A008-91C66521F8B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelStation.Blazor.Client", "FuelStation.Blazor\Client\FuelStation.Blazor.Client.csproj", "{5D033F31-261A-42BC-A008-91C66521F8B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuelStation.Blazor.Shared", "FuelStation.Blazor\Shared\FuelStation.Blazor.Shared.csproj", "{DCADCCE6-EB74-4CA9-BA89-98049B030DAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelStation.Blazor.Shared", "FuelStation.Blazor\Shared\FuelStation.Blazor.Shared.csproj", "{DCADCCE6-EB74-4CA9-BA89-98049B030DAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuelStation.Forms", "FuelStation.Forms\FuelStation.Forms.csproj", "{6C3D2DFD-BD95-4955-BC6D-846573249A43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -163,6 +165,10 @@ Global
 		{DCADCCE6-EB74-4CA9-BA89-98049B030DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCADCCE6-EB74-4CA9-BA89-98049B030DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCADCCE6-EB74-4CA9-BA89-98049B030DAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C3D2DFD-BD95-4955-BC6D-846573249A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C3D2DFD-BD95-4955-BC6D-846573249A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C3D2DFD-BD95-4955-BC6D-846573249A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C3D2DFD-BD95-4955-BC6D-846573249A43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -198,6 +204,7 @@ Global
 		{29D50EF0-2651-4129-857A-7692F2C5D1B2} = {FAC7F2DA-4C7E-4A53-A7E4-9BAC10A8476A}
 		{5D033F31-261A-42BC-A008-91C66521F8B0} = {FAC7F2DA-4C7E-4A53-A7E4-9BAC10A8476A}
 		{DCADCCE6-EB74-4CA9-BA89-98049B030DAD} = {FAC7F2DA-4C7E-4A53-A7E4-9BAC10A8476A}
+		{6C3D2DFD-BD95-4955-BC6D-846573249A43} = {F41DA530-E6EB-4771-A6FD-E2670425F711}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C6FA618A-89D9-4277-9BD1-111335703615}

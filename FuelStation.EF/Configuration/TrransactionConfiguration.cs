@@ -17,7 +17,7 @@ namespace FuelStation.EF.Configuration {
 
             builder.HasOne(transaction => transaction.Employee).WithMany(employee => employee.Transactions).HasForeignKey(transaction => transaction.EmployeeID).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne(transaction => transaction.Customer).WithMany(customer => customer.Transactions).HasForeignKey(transaction => transaction.CustomerID).OnDelete(DeleteBehavior.Restrict);
-            builder.HasMany(Transaction => Transaction.TransactionLines).WithOne(transaction => transaction.Transaction).HasForeignKey(transactionLine  => transactionLine.TransactionID);    
+            builder.HasMany(transaction => transaction.TransactionLines).WithOne(transaction => transaction.Transaction).HasForeignKey(transactionLine  => transactionLine.TransactionID);    
         }
     }
 }

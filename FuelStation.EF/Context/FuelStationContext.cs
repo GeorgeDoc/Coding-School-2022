@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 namespace FuelStation.EF.Context {
     public class FuelStationContext : DbContext {
 
+        //public FuelStationContext() { }
+        //public FuelStationContext(DbContextOptions options) : base(options) { }
+
         public DbSet<Customer> Customers{ get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Item> Items { get; set; }

@@ -18,7 +18,7 @@ namespace FuelStation.EF.Configuration {
             builder.Property(tl => tl.DiscountValue).HasColumnType("decimal(8,2)");
             builder.Property(tl => tl.TotalValue).HasColumnType("decimal(9,2)");
 
-            builder.HasOne(tl => tl.Item).WithMany(item => item.TransactionLines).HasForeignKey(tl => tl.Item);
+            builder.HasOne(tl => tl.Item).WithMany(item => item.TransactionLines).HasForeignKey(tl => tl.ItemID);
         }
     }
 }
