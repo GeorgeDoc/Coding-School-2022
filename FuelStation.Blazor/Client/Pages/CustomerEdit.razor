@@ -1,0 +1,59 @@
+﻿@page "/customers/edit/{Id:guid?}"
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+
+<h3>Edit Customer</h3>
+
+@if(CustomerItem == null) {
+	<p>Loading ...</p>
+}
+else {
+	<div class="row">
+	<div class="col-md-3">
+		<label class="form-label">Name</label>
+		<input class="form-control" @bind="@CustomerItem.Name"/>
+				<label class="form-label">Surname</label>
+		<input class="form-control" @bind="@CustomerItem.Surname"/>
+				<label class="form-label">Card  Number</label>
+		<input class="form-control" @bind="@CustomerItem.CardNumber"/>
+	</div>
+	</div>
+
+	<div class="row mt-2">
+		<div class="col">
+			<button class="btn btn-success" @onclick="OnSave">Save</button>
+			<button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
+		</div>
+	</div>
+}
+
+
+@code {
+	[Parameter] public Guid? Id { get; set; } // can get a parameter from route
+	CustomerEditViewModel CustomerItem { get; set; }
+
+	protected override async Task OnInitializedAsync() {
+		if(Id == null) { //Create
+			CustomerItem = new CustomerEditViewModel(); //fill with a new
+		}
+		else {          //Edit
+			CustomerItem = await httpClient.GetFromJsonAsync<CustomerEditViewModel>($"customer/{Id}"); //fill with an existing
+		}
+	}
+
+	protected async Task OnSave() {
+		HttpResponseMessage response; //way of returning a message/data from an action
+		if (Id == null) {
+			response = await httpClient.PostAsJsonAsync("Customer", CustomerItem);
+		}
+		else {
+			response = await httpClient.PutAsJsonAsync("Customer", CustomerItem);
+		}
+		response.EnsureSuccessStatusCode(); // if erroneous status code, exception
+		navigationManager.NavigateTo("customers");
+	}
+
+	protected void OnCancel() {
+		navigationManager.NavigateTo("customers");
+	}
+}
