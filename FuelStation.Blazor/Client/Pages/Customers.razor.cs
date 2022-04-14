@@ -23,7 +23,7 @@ namespace FuelStation.Blazor.Client.Pages {
         }
 
         async Task EditCustomer(CustomerViewModel customerToEdit) {
-            navigationManager.NavigateTo($"/customers/edit{customerToEdit.Id}");
+            navigationManager.NavigateTo($"/customers/edit/{customerToEdit.Id}");
         }
 
         async Task DeleteCustomer(CustomerViewModel customerToDelete) {

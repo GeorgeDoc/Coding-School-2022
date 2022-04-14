@@ -3,9 +3,9 @@ using FuelStation.EF.Repositories;
 using FuelStation.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FuelStation.Blazor.Server.Controllers {
-
-    [ApiController]
+namespace FuelStation.Blazor.Server.Controllers {   // TODO: make seperatte lists for current and old employees based on HireDateEnd.
+                                                    //       By default, show current. With a select, show old.
+    [ApiController]                                 //       DELETE should put DateTime.Now as HireDateEnd (but can still be editable)
     [Route("[controller]")]
     public class EmployeeController : ControllerBase {
 
@@ -98,5 +98,5 @@ namespace FuelStation.Blazor.Server.Controllers {
             return Ok();
         }
     }            // TODO: HireEndDate like todo.Finished?
-
+                
 }

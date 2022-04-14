@@ -20,7 +20,7 @@ namespace FuelStation.Blazor.Client.Pages {
         }
 
         async Task EditEmployee(EmployeeViewModel employeeToEdit) {
-            navigationManager.NavigateTo($"/employees/edit{employeeToEdit.Id}");
+            navigationManager.NavigateTo($"/employees/edit/{employeeToEdit.Id}");
         }
 
         async Task DeleteEmployee(EmployeeViewModel employeeToDelete) {
