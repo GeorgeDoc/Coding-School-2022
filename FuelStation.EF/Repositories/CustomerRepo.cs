@@ -20,7 +20,7 @@ namespace FuelStation.EF.Repositories {
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(Guid id) { // TODO: Make a function for lines 24-26, repeated across all repos
+        public async Task DeleteAsync(Guid id) { // TODO: Can make a function for lines 24-26? repeated across all repos
             var foundCustomer = await _context.Customers.SingleOrDefaultAsync(customer => customer.Id.Equals(id)); 
             if (foundCustomer == null) 
                 throw new KeyNotFoundException($"Given id '{id}' was not found in database");

@@ -30,19 +30,32 @@ namespace FuelStation.Blazor.Server.Controllers {
             });
         }
 
-        [HttpGet("{id}")] // get one
+        [HttpGet("one{id}")] // get one
         public async Task<EmployeeEditViewModel> Get(Guid id) {
 
-            var result = await _employeeRepo.GetByIdAsync(id);
-            return new EmployeeEditViewModel {
-                Id = result.Id,
-                Name = result.Name,
-                Surname = result.Surname,
-                EmployeeType = result.EmployeeType,
-                SallaryPerMonth = result.SallaryPerMonth,
-                HireDateStart = result.HireDateStart,
-                HireDateEnd = result.HireDateEnd
-            };
+            EmployeeEditViewModel model = new();
+            if (id != Guid.Empty) {   //If exists, fill with details to Edit
+                var existing = await _employeeRepo.GetByIdAsync(id);
+                model.Id = existing.Id;
+                model.Name = existing.Name;
+                model.Surname = existing.Surname;
+                model.EmployeeType = existing.EmployeeType;
+                model.SallaryPerMonth = existing.SallaryPerMonth;
+                model.HireDateStart = existing.HireDateStart;
+                model.HireDateEnd = existing.HireDateEnd;
+            }
+
+            //var result = await _employeeRepo.GetByIdAsync(id);
+            //return new EmployeeEditViewModel {
+            //Id = result.Id,
+            //Name = result.Name,
+            //Surname = result.Surname,
+            //EmployeeType = result.EmployeeType,
+            //SallaryPerMonth = result.SallaryPerMonth,
+            //HireDateStart = result.HireDateStart,
+            //HireDateEnd = result.HireDateEnd
+            //};
+            return model;
         }
 
         [HttpPost]

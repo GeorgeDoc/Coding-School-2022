@@ -37,13 +37,17 @@ else{
             @foreach(var employee in employeeList)
             {
                 <tr>
-                    <td>@employee.Id</td>
+                    @*<td>@employee.Id</td> this is for me to see*@ 
                     <td>@employee.Name</td>
                     <td>@employee.Surname</td>
-                    <td>Position select</td>
+                    <td>@employee.EmployeeType</td>
                     <td>@employee.SallaryPerMonth</td>
                     <td>@employee.HireDateStart</td>
-                    @if(employee.HireDateEnd != null) { <td>@employee.HireDateEnd</td> }
+                    @if(employee.HireDateEnd != null) { 
+                        <td>@employee.HireDateEnd</td>
+                    } else {
+                        <td>working</td>
+                    }
                     <td>
                         <button class="btn btn-primary" @onclick="() => EditEmployee(employee)">Edit</button>
                         <button class="btn btn-danger" @onclick="() => DeleteEmployee(employee)">Delete</button>

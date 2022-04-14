@@ -25,6 +25,7 @@ namespace FuelStation.EF.Repositories {
             if (foundEmployee == null) {
                 throw new KeyNotFoundException($"Given id '{id}' was not found in database");
             }
+            _context.Employees.Remove(foundEmployee);
             await _context.SaveChangesAsync();
         }
 

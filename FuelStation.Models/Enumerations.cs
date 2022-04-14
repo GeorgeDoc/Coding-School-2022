@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace FuelStation.Models {
     
     public enum EmployeeType {
-        Manager,
-        Staff,
-        Cashier
+        Manager = 0,
+        Staff = 1,
+        Cashier = 2 
     }
 
     public enum ItemType {

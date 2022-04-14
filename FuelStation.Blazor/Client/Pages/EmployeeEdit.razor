@@ -1,0 +1,104 @@
+﻿@page "/employees/edit/{Id:guid?}"
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+
+<h3>Edit Employee</h3>
+
+@if (EmployeeItem == null) {
+	<p>Loading ...</p>
+}
+else {
+	<div class="card mt-3">
+		<div class="card-header">
+			<div>Employee</div>
+
+			<div class="input-group">
+
+
+				<EditForm class="mb-4" Model="EmployeeItem">
+
+				<div class="row my-2">
+					<div class=" col">
+						<input class="form-control mt-3 " @bind="@EmployeeItem.Name" placeholder="Name..." />
+					</div>
+					<div class=" col">
+						<input class="form-control mt-3" @bind="@EmployeeItem.Surname" placeholder="Surname..." />
+					</div>
+				</div>
+
+				<div class="row my-2">
+					<div class=col>
+						<InputSelect @bind-Value="EmployeeItem.EmployeeType">
+							@foreach (var employeeType in Enum.GetValues(typeof(EmployeeType))) {
+							<option value="@employeeType">@employeeType</option>
+							}
+						</InputSelect>
+					</div>
+					<div class=col>
+					<input class="form-control me-3" @bind="@EmployeeItem.SallaryPerMonth" placeholder="Salary per month..." />
+				</div>
+				</div>
+
+				<div class= "row my-2">
+				<div class=col>
+					<input class="form-control me-3" @bind="@EmployeeItem.HireDateStart" placeholder="Hire date..." />
+				</div>
+				<div class=col>
+					<input class="form-control me-3" @bind="@EmployeeItem.HireDateEnd" placeholder="End date..." />
+				</div>
+				</div>
+
+					<button class="btn btn-primary" @onclick="OnSave">Save</button>
+				</EditForm>
+			</div>
+		</div>
+
+@*		<select class="form-select" aria-label="Position" @bind="Id">
+			@foreach (var employeeType in Enum.GetValues(typeof(EmployeeType))) {
+					<option value="@employeeType"> @employeeType</option>
+				}
+			</select>*@
+
+	</div>
+
+
+	<div class="row mt-2">
+		<div class="col">
+			<button class="btn btn-success" @onclick="OnSave">Save</button>
+			<button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
+		</div>
+	</div>
+}
+
+@code {
+	[Parameter] public Guid? Id { get; set; }
+	EmployeeEditViewModel EmployeeItem { get; set; }
+	private EmployeeType employeeType { get; set; }
+	private enum Position { Manager, Staff, Cashier }
+
+	protected override async Task OnInitializedAsync() {
+		//if(Id == null) { //Create							//TODO: move to controller?
+		//	EmployeeItem = new EmployeeEditViewModel(); //fill with a new
+		//}
+		//else {          //Edit
+		//	EmployeeItem = await httpClient.GetFromJsonAsync<EmployeeEditViewModel>($"employee/{Id}"); //fill with an existing
+		//}
+		EmployeeItem = await httpClient.GetFromJsonAsync<EmployeeEditViewModel>($"employee/one{(Id == null ? Guid.Empty : Id)}");
+	}
+
+	protected async Task OnSave() {
+		HttpResponseMessage response; //way of returning a message/data from an action
+		if (Id == null) {
+			response = await httpClient.PostAsJsonAsync("Employee", EmployeeItem);
+		}
+		else {
+			response = await httpClient.PutAsJsonAsync("Employee", EmployeeItem);
+		}
+		response.EnsureSuccessStatusCode(); // if erroneous status code, exception
+		navigationManager.NavigateTo("employees");
+	}
+
+	protected void OnCancel() {
+		navigationManager.NavigateTo("employees");
+	}
+}
