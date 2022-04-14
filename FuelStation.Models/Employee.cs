@@ -10,6 +10,7 @@ namespace FuelStation.Models {
         public DateTime? HireDateEnd { get; set; }
         public decimal SallaryPerMonth { get; set; }
         public EmployeeType EmployeeType { get; set; }
+        //public bool Current { get; set; } = true;
 
         public List<Transaction> Transactions { get; set; }
         public Employee() {

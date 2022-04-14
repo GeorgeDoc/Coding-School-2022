@@ -12,10 +12,10 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<FuelStationContext>();
 builder.Services.AddScoped<IEntityRepo<Customer>, CustomerRepo>();
-builder.Services.AddSingleton<IEntityRepo<Employee>, EmployeeRepo>();
-//builder.Services.AddSingleton<IEntityRepo<Item>, ItemRepo>();
-//builder.Services.AddSingleton<IEntityRepo<TransactionLine>, TransactionLineRepo>();
-//builder.Services.AddSingleton<IEntityRepo<Transaction>, TransactionRepo>();
+builder.Services.AddScoped<IEntityRepo<Employee>, EmployeeRepo>();
+//builder.Services.AddScoped<IEntityRepo<Item>, ItemRepo>();
+//builder.Services.AddScoped<IEntityRepo<TransactionLine>, TransactionLineRepo>();
+//builder.Services.AddScoped<IEntityRepo<Transaction>, TransactionRepo>();
 
 var app = builder.Build();
 

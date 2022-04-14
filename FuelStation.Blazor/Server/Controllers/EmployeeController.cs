@@ -4,14 +4,18 @@ using FuelStation.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FuelStation.Blazor.Server.Controllers {
+
+    [ApiController]
+    [Route("[controller]")]
     public class EmployeeController : ControllerBase {
+
         private readonly IEntityRepo<Employee> _employeeRepo;
 
         public EmployeeController(IEntityRepo<Employee> employeeRepo) {
             _employeeRepo = employeeRepo;
         }
 
-        [HttpGet]
+        [HttpGet("getallemployees")]
         public async Task<IEnumerable<EmployeeViewModel>> Get() { //get all
 
             var result = await _employeeRepo.GetAllAsync();
@@ -27,7 +31,7 @@ namespace FuelStation.Blazor.Server.Controllers {
         }
 
         [HttpGet("{id}")] // get one
-        public async Task<EmployeeEditViewModel> Get(Guid id) { //get all
+        public async Task<EmployeeEditViewModel> Get(Guid id) {
 
             var result = await _employeeRepo.GetByIdAsync(id);
             return new EmployeeEditViewModel {

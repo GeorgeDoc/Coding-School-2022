@@ -12,12 +12,13 @@ namespace FuelStation.EF.Configuration {
         
         public void Configure(EntityTypeBuilder<Employee> builder) {
             builder.ToTable("Employees").HasKey(employee => employee.Id);
-            builder.Property(employee => employee.Name).IsRequired().HasMaxLength(50);
-            builder.Property(employee => employee.Surname).IsRequired().HasMaxLength(50);
-            builder.Property(employee => employee.EmployeeType).IsRequired();
-            builder.Property(employee => employee.SallaryPerMonth).IsRequired().HasColumnType("decimal(8,2)");
+            builder.Property(employee => employee.Name).HasMaxLength(50);
+            builder.Property(employee => employee.Surname).HasMaxLength(50);
+            builder.Property(employee => employee.EmployeeType);
+            builder.Property(employee => employee.SallaryPerMonth).HasColumnType("decimal(8,2)");
             builder.Property(employee => employee.HireDateStart);
             builder.Property(employee => employee.HireDateEnd);
+            //builder.Property(employee => employee.Current);
         }
     }
 }

@@ -40,7 +40,7 @@ namespace FuelStation.Blazor.Server.Controllers {
         }
 
         [HttpGet("{id}")] // get one
-        public async Task<CustomerEditViewModel> Get(Guid id) { //get all
+        public async Task<CustomerEditViewModel> Get(Guid id) {
 
             var result = await _customerRepo.GetByIdAsync(id);
             return new CustomerEditViewModel {

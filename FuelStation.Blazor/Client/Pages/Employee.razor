@@ -16,7 +16,7 @@ else{
         <button class="btn btn-priamry" onclick="AddEmployee">New Customer</button>
     </EditForm>*@
 
-    <button class="btn btn-priamry" @onclick="AddEmployee">Add Customer</button>
+    <button class="btn btn-priamry" @onclick="AddEmployee">Add Employee</button>
 @*    <button class="btn btn-priamry" @onclick="()=>AddEmployee(employee)">Add Customer</button>
     <button class="btn btn-primary" @onclick="()=>AddEmployee(employeeview)" >Add</button>*@
 
@@ -41,9 +41,9 @@ else{
                     <td>@employee.Name</td>
                     <td>@employee.Surname</td>
                     <td>Position select</td>
-                    <td>@employee.Salary</td>
-                    <td>@employee.Hire date</td>
-                    <td>@employee.Finish date</td>
+                    <td>@employee.SallaryPerMonth</td>
+                    <td>@employee.HireDateStart</td>
+                    @if(employee.HireDateEnd != null) { <td>@employee.HireDateEnd</td> }
                     <td>
                         <button class="btn btn-primary" @onclick="() => EditEmployee(employee)">Edit</button>
                         <button class="btn btn-danger" @onclick="() => DeleteEmployee(employee)">Delete</button>

@@ -4,8 +4,8 @@ using System.Net.Http.Json;
 namespace FuelStation.Blazor.Client.Pages {
     public partial class Employee {
         private bool isLoading = true;
-        List<EmployeeViewModel> customerList = new();
-        //List<EmployeeViewModel> customerList = new List<EmployeeViewModel>();
+        List<EmployeeViewModel> employeeList = new();
+        //List<EmployeeViewModel> employeeList = new List<EmployeeViewModel>();
         private string CardNo { get; set; }
 
         protected override async Task OnInitializedAsync() {
@@ -13,22 +13,22 @@ namespace FuelStation.Blazor.Client.Pages {
             isLoading = false;
         }
 
-        private async Task LoadEmployeesFromServer() { // TODO: better as a service. not good to test with server connection
-            customerList = await httpClient.GetFromJsonAsync<List<EmployeeViewModel>>("Employee");
+        private async Task LoadEmployeesFromServer() { 
+            employeeList = await httpClient.GetFromJsonAsync<List<EmployeeViewModel>>("Employee/getallemployees"); //needed custom uri to go to controller
         }
 
         async Task AddEmployee() {
-            navigationManager.NavigateTo("/customers/edit");
+            navigationManager.NavigateTo("/employees/edit");
         }
 
-        async Task EditEmployee(EmployeeViewModel customerToEdit) {
-            navigationManager.NavigateTo($"/customers/edit{customerToEdit.Id}");
+        async Task EditEmployee(EmployeeViewModel employeeToEdit) {
+            navigationManager.NavigateTo($"/employees/edit{employeeToEdit.Id}");
         }
 
-        async Task DeleteEmployee(EmployeeViewModel customerToDelete) {
+        async Task DeleteEmployee(EmployeeViewModel employeeToDelete) {
             //var confirm = await jsRuntime.InvokeAsync<bool>("confirmJS", null); // ΓΙΑΤΙ ΜΕ ΤΑΛΑΙΠΟΡΕΙΣ  ΒΡΑΔΙΑΤΙΚΟ
             if (true) {// (confirm) {
-                var response = await httpClient.DeleteAsync($"customer/{customerToDelete.Id}");
+                var response = await httpClient.DeleteAsync($"employee/{employeeToDelete.Id}");
                 response.EnsureSuccessStatusCode();
                 await LoadEmployeesFromServer();
             }
