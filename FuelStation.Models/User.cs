@@ -9,6 +9,10 @@ namespace FuelStation.Models {
         public string Username { get; set; }
         public string Password { get; set; }
         public int PermissionLevel { get; set; }
+
+        public User() {
+
+        }
         public User(string username, string _password) {
             username = username;
             Password = _password;

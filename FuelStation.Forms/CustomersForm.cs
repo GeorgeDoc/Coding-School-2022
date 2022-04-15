@@ -29,5 +29,15 @@ namespace FuelStation.Forms {
             _customerRepo.GetAllAsync().Wait();
             dataGridView1.DataSource = _customers;
         }
+
+        private void button2_Click(object sender, EventArgs e) {
+
+        }
+
+        private void btnCustCancel_Click(object sender, EventArgs e) {
+            HomeForm form = new HomeForm();
+            form.Show();
+            this.Close();
+        }
     }
 }

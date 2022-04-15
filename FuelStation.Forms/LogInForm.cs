@@ -25,13 +25,16 @@ namespace FuelStation.Forms {
         }
 
         private void lblExit_Click(object sender, EventArgs e) {
+            //set user to null
             System.Environment.Exit(1);
             //System.Windows.Forms.Application.Exit();
         }
 
         private void btnLogin_Click(object sender, EventArgs e) {
             User user = new User(_userName, _password);
-            
+            // If authenticate true
+            HomeForm form = new HomeForm();
+
         }
         
     }

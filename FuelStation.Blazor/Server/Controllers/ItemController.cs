@@ -15,7 +15,7 @@ namespace FuelStation.Blazor.Server.Controllers {
             _itemRepo = itemRepo;
         }
 
-        [HttpGet("/getallitems")]
+        [HttpGet("getallitems")]
         public async Task<IEnumerable<ItemViewModel>> Get() { //get all
 
             var result = await _itemRepo.GetAllAsync();

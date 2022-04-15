@@ -1,9 +1,46 @@
-﻿@page "/"
+﻿
+@page "/"
+@using System.Text.Json
+@inject NavigationManager navigationManager
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Hello!</h1>
 
-Welcome to your new app.
+Welcome to FuelStation Manager 0.7
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+@code {
+	public User User = new User();
+	public User LocalUser { get; set; }
+	//public List<User> Users { get; set; }
+	public AuthStuff AuthStuff { get; } = new();
+												//public readonly string localUserFile = "localUserFile.json";
+
+	protected override void OnInitialized() {
+
+		//AuthStuff.LoadUser(); 
+		LoadUser();
+
+		//if (User.PermissionLevel ==  0) {
+		//	navigationManager.NavigateTo("/login");
+		//}
+		//base.OnInitialized();
+	}
+
+	public void SaveUser() {
+		if (File.Exists(AuthStuff.localUserFile)) {
+			LoadUser();
+		}
+		string jsonStr = System.Text.Json.JsonSerializer.Serialize(User);
+		File.WriteAllText(AuthStuff.localUserFile, jsonStr);
+	}
+	
+	public bool LoadUser() {
+		bool fileExixts = File.Exists(AuthStuff.localUserFile);
+		if(fileExixts) {
+			string jsonStr = File.ReadAllText(AuthStuff.localUserFile);
+			LocalUser = JsonSerializer.Deserialize<User>(jsonStr);
+		}
+		return fileExixts;
+	}
+}

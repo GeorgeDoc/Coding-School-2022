@@ -1,7 +1,7 @@
 ﻿using FuelStation.Models;
 
-namespace FuelStation.Blazor.Server.Controllers {
-    public class Authenticator { 
+namespace FuelStation.Models {
+    public class Authenticator {
 
         public Authenticator() { }
         public Authenticator(User user) {
