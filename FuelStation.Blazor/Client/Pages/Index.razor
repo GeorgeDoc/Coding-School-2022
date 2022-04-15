@@ -30,27 +30,37 @@ Welcome to FuelStation Manager 0.7
 	<did class=container>
 		<div class="row mt-2">
 			<div class=col-md-4>
-				<button type="submit" class="btn btn-primary" @onclick="Login">Manager</button>
+				<button type="submit" class="btn btn-primary" @onclick="LoginAsManager">Manager</button>
 			</div>
 			<div class=col-md-4>
-				<button type="submit" class="btn btn-primary" @onclick="Login">Cashier</button>
+				<button type="submit" class="btn btn-primary" @onclick="LoginAsCashier">Cashier</button>
 			</div>
 			<div class=col-md-4>
-				<button type="submit" class="btn btn-primary" @onclick="Login">Staff</button>
+				<button type="submit" class="btn btn-primary" @onclick="LoginAsStaff">Staff</button>
 			</div>
 		</div>
 	</did>
 </div>
 
 @code {
-		private string Username { get; set; } = string.Empty;
+	private string Username { get; set; } = string.Empty;
 	private string Password { get; set; } = string.Empty;
 	string text = string.Empty;
 	string Color = "black";
 	//int _permisssionLevel = 0;
-
 	User user { get; set; } = new();
 	public AuthStuff authStuff { get; }
+
+	private void LoginAsManager() {
+		navigationManager.NavigateTo("/manager");
+	}
+		private void LoginAsCashier() {
+		navigationManager.NavigateTo("/cashier");
+	}
+		private void LoginAsStaff() {
+		navigationManager.NavigateTo("/staff");
+	}
+
 
 	private void Login() {
 		Authenticator auth = new Authenticator();
