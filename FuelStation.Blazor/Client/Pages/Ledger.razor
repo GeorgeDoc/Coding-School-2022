@@ -1,0 +1,39 @@
+﻿@page "/ledger"
+@inject HttpClient httoClient
+
+<h3>Monthly Ledger</h3>
+
+@if (isLoading)
+{
+    <div class="spinner-border" role="status"></div>
+}
+else {
+    
+}
+
+
+
+@code {
+    private bool isLoading = true;
+    LedgerViewModel LedgerItem { get; set; }
+    private MonthEnum monthEnum { get; set; }
+    private decimal Rent { get; set; }
+
+    protected override async Task OnInitializedAsync() {
+        //load transactions
+        //load employees
+        isLoading = false;
+    }
+
+    private void  GetIncome() {
+
+    }
+
+    private void GetExpenses() {
+
+    }
+
+    private void GetTotal() {
+        
+    }
+}

@@ -15,7 +15,7 @@ namespace FuelStation.Blazor.Server.Controllers {
             _itemRepo = itemRepo;
         }
 
-        [HttpGet("getallitems")]
+        [HttpGet("/getallitems")]
         public async Task<IEnumerable<ItemViewModel>> Get() { //get all
 
             var result = await _itemRepo.GetAllAsync();
@@ -29,18 +29,20 @@ namespace FuelStation.Blazor.Server.Controllers {
             });
         }
 
-        [HttpGet("{id}")] // get one
+        [HttpGet("one{id}")] // get one
         public async Task<ItemEditViewModel> Get(Guid id) {
 
-            var result = await _itemRepo.GetByIdAsync(id);
-            return new ItemEditViewModel {
-                Id = result.Id,
-                Code = result.Code,
-                Description = result.Description,
-                ItemType = result.ItemType,
-                Price = result.Price,
-                Cost = result.Cost,
-            };
+            ItemEditViewModel model = new();
+            if (id != Guid.Empty) {
+                var existing = await _itemRepo.GetByIdAsync(id);
+                model.Id = existing.Id;
+                model.Code = existing.Code;
+                model.Description = existing.Description;
+                model.ItemType = existing.ItemType;
+                model.Price = existing.Price;
+                model.Cost = existing.Cost;          
+            }
+            return model;
         }
 
         [HttpPost]

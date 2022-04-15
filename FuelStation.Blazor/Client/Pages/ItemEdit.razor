@@ -1,0 +1,89 @@
+﻿@page "/items/edit/{Id:guid?}"
+@inject HttpClient httpClient
+@inject NavigationManager navigationManager
+
+<h3>Edit Item</h3>
+
+@if (ItemItem == null) {		@*Make a isLoading. So uh... naming here sure got messy*@
+	<p>Loading ...</p>
+}
+else {
+	<div class="card mt-3">
+		<div class="card-header">
+			<div>Item</div>
+
+			<div class="input-group">
+
+				<EditForm class="mb-4" Model="ItemItem">
+
+				<div class="row my-2">
+					<div class=" col">
+						<input class="form-control mt-3 " @bind="@ItemItem.Code" placeholder="Code..." />
+					</div>
+					<div class=" col">
+						<input class="form-control mt-3" @bind="@ItemItem.Description" placeholder="Description..." />
+					</div>
+				</div>
+
+				<div class="row my-2">
+					<div class=col>
+						<InputSelect @bind-Value="ItemItem.ItemType">
+							@foreach (var itemType in Enum.GetValues(typeof(ItemType))) {
+							<option value="@itemType">@itemType</option>
+							}
+						</InputSelect>
+					</div>
+					<div class=col>
+					<label class="form-label">Price</label>
+					<input class="form-control me-3" @bind="@ItemItem.Price" placeholder="Price..." />
+				</div>
+				</div>
+
+				<div class= "row my-2">
+				<div class=col>
+					<label class="form-label">Cost</label>
+					<input class="form-control me-3" @bind="@ItemItem.Cost" placeholder="Cost..." />
+				</div>
+				</div>
+
+					<button class="btn btn-primary" @onclick="OnSave">Save</button>
+				</EditForm>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row mt-2">
+		<div class="col">
+			<button class="btn btn-success" @onclick="OnSave">Save</button>
+			<button class="btn btn-danger" @onclick="OnCancel">Cancel</button>
+		</div>
+	</div>
+}
+
+@code {
+	[Parameter] public Guid? Id { get; set; }
+	ItemEditViewModel ItemItem { get; set; }
+	private ItemType itemType { get; set; }
+
+	protected override async Task OnInitializedAsync() {
+		ItemItem = await httpClient.GetFromJsonAsync<ItemEditViewModel>($"item/one{(Id == null ? Guid.Empty : Id)}");
+	}
+
+	protected async Task OnSave() {
+		HttpResponseMessage response;
+		if (Id == null) {
+			response = await httpClient.PostAsJsonAsync("Item", ItemItem);
+		}
+		else {
+			response = await httpClient.PutAsJsonAsync("Item", ItemItem);
+		}
+		response.EnsureSuccessStatusCode();
+		navigationManager.NavigateTo("items");
+	}
+
+	protected void OnCancel() {
+		navigationManager.NavigateTo("items");
+	}
+}
+

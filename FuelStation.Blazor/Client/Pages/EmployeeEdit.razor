@@ -73,7 +73,6 @@ else {
 	[Parameter] public Guid? Id { get; set; }
 	EmployeeEditViewModel EmployeeItem { get; set; }
 	private EmployeeType employeeType { get; set; }
-	private enum Position { Manager, Staff, Cashier }
 
 	protected override async Task OnInitializedAsync() {
 		//if(Id == null) { //Create							//TODO: move to controller?

@@ -5,9 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace FuelStation.Forms {
     internal static class Program {
         public static IServiceProvider ServiceProvider { get; private set; }
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+ 
         [STAThread]
         static void Main() {
             // To customize application configuration such as set high DPI settings or default font,
@@ -21,8 +19,8 @@ namespace FuelStation.Forms {
 
             ServiceProvider = services.BuildServiceProvider(); //not using, make global, or make a function to call. March 23, 2.15' recoding
             //var mainForm = ServiceProvider.GetRequiredService<MainForm>();
-            var customersForm = ServiceProvider.GetRequiredService<CustomersForm>();
-            Application.Run(customersForm);
+            var loginForm = ServiceProvider.GetRequiredService<LogInForm>();
+            Application.Run(loginForm);
         }
         private static void ConfigureServices(IServiceCollection services) {
             services.AddSingleton<IEntityRepo<Employee>, EmployeeRepo>();
@@ -32,6 +30,9 @@ namespace FuelStation.Forms {
             services.AddSingleton<IEntityRepo<TransactionLine>, TransactionLineRepo>();
 
             services.AddSingleton<CustomersForm>();
+            services.AddSingleton<ItemsForm>();
+            services.AddSingleton<TransactionsForm>();
+            services.AddSingleton<LogInForm>();
         }
     }
 }

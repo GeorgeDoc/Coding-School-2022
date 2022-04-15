@@ -22,4 +22,19 @@ namespace FuelStation.Models {
         Credit_Card,
         Cash
     }
+
+    public enum MonthEnum {
+        January,
+        February,
+        March,
+        April,
+        May,
+        June,
+        July,
+        August,
+        September,
+        October,
+        November,
+        December
+    }
 }
