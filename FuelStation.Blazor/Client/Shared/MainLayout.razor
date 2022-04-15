@@ -1,11 +1,48 @@
 ﻿@inherits LayoutComponentBase
-
+@inject NavigationManager navigationManager
+   
 <div class="page">
+
+    @if (navigationManager.Uri.Contains("manager")) {
+        <div class="sidebar">
+            <NavMenu />
+        </div>
+    }
+    else if(navigationManager.Uri.Contains("cashier")) {
+         <div class="sidebar">
+            <CashierLayout />
+        </div>           
+    }
+    else if(navigationManager.Uri.Contains("cashier")){ 
+          <div class="sidebar">
+            <StaffLayout />
+        </div>      
+    }
+    else {
+          <div class="sidebar">
+            <LoginLayout />
+        </div> 
+    }
+
+<main>
+   <div class="top-row px-4">
+       <a href="https://github.com/GeorgeDoc" target="_blank">About Our Company</a>
+   </div>
+
+   <article class="content px-4">
+       @Body
+   </article>
+</main>
+</div>
+
+
+
+@*<div class="page">
     <div class="sidebar">
         <NavMenu />
     </div>
 
-    <main>
+     <main>
         <div class="top-row px-4">
             <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
         </div>
@@ -14,4 +51,4 @@
             @Body
         </article>
     </main>
-</div>
+</div>*@
