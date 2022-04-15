@@ -1,0 +1,124 @@
+﻿@page "/manager"
+@page "/cashier"
+@page "/staff"
+@page "/"
+@using System.Text.Json
+@inject NavigationManager navigationManager
+
+<PageTitle>Index</PageTitle>
+
+Welcome to FuelStation Manager 0.7
+
+<h3>LogIn</h3>
+
+<div class="p-4">
+	<div class="col-md-3">
+		<div class="form-label">Username: </div>
+		<input type="form-control" id="username" @bind="Username" placeholder="Username" />
+	</div>
+</div>
+<div class="p-4">
+	<div class="col-md-3">
+		<div class="form-label">Password: </div>
+		<input type="form-control" id="password" @bind="Password" placeholder="Password" />
+	</div>
+	<div class="col-md-3">
+		<p style="color:@Color"><b>@text</b></p>
+	</div>
+	<button type="submit" class="btn btn-primary" @onclick="Login">Log In</button>
+
+	<did class=container>
+		<div class="row mt-2">
+			<div class=col-md-4>
+				<button type="submit" class="btn btn-primary" @onclick="Login">Manager</button>
+			</div>
+			<div class=col-md-4>
+				<button type="submit" class="btn btn-primary" @onclick="Login">Cashier</button>
+			</div>
+			<div class=col-md-4>
+				<button type="submit" class="btn btn-primary" @onclick="Login">Staff</button>
+			</div>
+		</div>
+	</did>
+</div>
+
+@code {
+		private string Username { get; set; } = string.Empty;
+	private string Password { get; set; } = string.Empty;
+	string text = string.Empty;
+	string Color = "black";
+	//int _permisssionLevel = 0;
+
+	User user { get; set; } = new();
+	public AuthStuff authStuff { get; }
+
+	private void Login() {
+		Authenticator auth = new Authenticator();
+		//if (auth.Authenticate(user)) {
+		if (Authenticate(user)) {
+			navigationManager.NavigateTo("/");
+			authStuff.SaveUser(user);
+			Username = string.Empty;
+			Password = string.Empty;
+		}
+		else {
+			Color = "red";
+			text = "Wrong Credentials";
+			Username = string.Empty;
+			Password = string.Empty;
+		}
+	}
+
+	public bool Authenticate(User user) {
+		bool check = false;
+		if (Username.Trim() == "admin" && Password.Trim() == "admin") {
+			check = true;
+			user.PermissionLevel = 3;
+		}
+		if (Username.Trim() == "cashier" && Password.Trim() == "cashier") {
+			check = true;
+			user.PermissionLevel = 2;
+		}
+		if (Username.Trim() == "staff" && Password.Trim() == "staff") {
+			check = true;
+			user.PermissionLevel = 1;
+		}
+		return check;
+	}
+}
+
+@*@code {
+	public User User = new User();
+	public User LocalUser { get; set; }
+	//public List<User> Users { get; set; }
+	public AuthStuff AuthStuff { get; } = new();
+												//public readonly string localUserFile = "localUserFile.json";
+
+	protected override void OnInitialized() {
+
+		//AuthStuff.LoadUser(); 
+		LoadUser();
+
+		//if (User.PermissionLevel ==  0) {
+		//	navigationManager.NavigateTo("/login");
+		//}
+		//base.OnInitialized();
+	}
+
+	public void SaveUser() {
+		if (File.Exists(AuthStuff.localUserFile)) {
+			LoadUser();
+		}
+		string jsonStr = System.Text.Json.JsonSerializer.Serialize(User);
+		File.WriteAllText(AuthStuff.localUserFile, jsonStr);
+	}
+	
+	public bool LoadUser() {
+		bool fileExixts = File.Exists(AuthStuff.localUserFile);
+		if(fileExixts) {
+			string jsonStr = File.ReadAllText(AuthStuff.localUserFile);
+			LocalUser = JsonSerializer.Deserialize<User>(jsonStr);
+		}
+		return fileExixts;
+	}
+}*@
