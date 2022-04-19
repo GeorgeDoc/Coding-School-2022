@@ -12,6 +12,7 @@ namespace FuelStation.Blazor.Shared {
         public AuthStuff() { }
 
         public readonly string localUserFile = "localUserFile.json";
+		public readonly string registeredUsers = "registeredUsers.json";
 		//protected readonly string localUserFile = "localUserFile.json";
 
 		public User _User { get; set; }

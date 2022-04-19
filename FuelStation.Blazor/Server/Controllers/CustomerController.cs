@@ -51,6 +51,18 @@ namespace FuelStation.Blazor.Server.Controllers {
             };
         }
 
+        //[HttpGet("{cardno}")] 
+        //public async Task<CustomerEditViewModel> Get(string cardno) {
+        //
+        //    var result = await _customerRepo.GetByCodeAsync(cardno);
+        //    return new CustomerEditViewModel {
+        //        Id = result.Id,
+        //        Name = result.Name,
+        //        Surname = result.Surname,
+        //        CardNumber = result.CardNumber,
+        //    };
+        //}
+
         [HttpPost]
         public async Task Post(CustomerEditViewModel customer) {
             var newCustomer = new Customer() {

@@ -23,7 +23,7 @@ namespace FuelStation.Forms {
             Application.Run(loginForm);
         }
         private static void ConfigureServices(IServiceCollection services) {
-            services.AddSingleton<IEntityRepo<Employee>, EmployeeRepo>();
+            services.AddSingleton<IEntityRepo<Employee>, EmployeeRepo>(); //should be scoped?
             services.AddSingleton<IEntityRepo<Customer>, CustomerRepo>();
             services.AddSingleton<IEntityRepo<Item>, ItemRepo>();
             services.AddSingleton<IEntityRepo<Transaction>, TransactionRepo>();
@@ -33,6 +33,7 @@ namespace FuelStation.Forms {
             services.AddSingleton<ItemsForm>();
             services.AddSingleton<TransactionsForm>();
             services.AddSingleton<LogInForm>();
+            
         }
     }
 }

@@ -4,11 +4,11 @@ using FuelStation.Models;
 namespace FuelStation.Forms {
     public partial class HomeForm : Form {
 
-        //private readonly IEntityRepo<Employee> _employeeRepo;
-        public HomeForm(){//IEntityRepo<Employee> employeeRepo) {
+        private readonly IEntityRepo<Customer> _customerRepo;
+
+        public HomeForm() {
             InitializeComponent();
-            //_employeeRepo = employeeRepo;
-            //Program.ServiceProvider.
+
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
@@ -24,6 +24,12 @@ namespace FuelStation.Forms {
             LogInForm form = new LogInForm();
             form.Show();
             //set user to null
+            this.Close();
+        }
+
+        private void customersToolStripMenuItem_Click(object sender, EventArgs e) {
+            CustomersForm form = new CustomersForm(_customerRepo);
+            form.Show();
             this.Close();
         }
     }

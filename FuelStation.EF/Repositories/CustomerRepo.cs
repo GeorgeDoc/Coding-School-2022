@@ -37,8 +37,8 @@ namespace FuelStation.EF.Repositories {
             return await _context.Customers.SingleOrDefaultAsync(customer => customer.Id.Equals(id));
             //return await _context.Customers.Where(customer => customer.Id == id).SingleOrDefaultAsync(); // where has worse performance
         }
-        public async Task GetByCodeAsync(string code) { // FIND BY CARD CODE HERE?
-            var foundCustomer = await _context.Customers.SingleOrDefaultAsync(customer => customer.CardNumber.Equals(code));
+        public async Task<Customer?> GetByCodeAsync(string code) { // FIND BY CARD CODE HERE?
+            return await _context.Customers.SingleOrDefaultAsync(customer => customer.CardNumber.Equals(code));
         }
 
         public async Task UpdateAsync(Guid id, Customer entity) {

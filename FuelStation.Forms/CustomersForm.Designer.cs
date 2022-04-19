@@ -23,27 +23,31 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
+            this.gvCustomers = new System.Windows.Forms.DataGridView();
             this.btnCustSave = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbSurname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbCardNo = new System.Windows.Forms.TextBox();
             this.btmCustRemove = new System.Windows.Forms.Button();
             this.btnCustCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnBuy = new System.Windows.Forms.Button();
+            this.initialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.gvCustomers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.initialBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // gvCustomers
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 197);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(523, 205);
-            this.dataGridView1.TabIndex = 0;
+            this.gvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvCustomers.Location = new System.Drawing.Point(12, 197);
+            this.gvCustomers.Name = "gvCustomers";
+            this.gvCustomers.RowTemplate.Height = 25;
+            this.gvCustomers.Size = new System.Drawing.Size(523, 205);
+            this.gvCustomers.TabIndex = 0;
             // 
             // btnCustSave
             // 
@@ -54,12 +58,12 @@
             this.btnCustSave.Text = "Save";
             this.btnCustSave.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tbName
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 2;
+            this.tbName.Location = new System.Drawing.Point(72, 61);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(100, 23);
+            this.tbName.TabIndex = 2;
             // 
             // label1
             // 
@@ -79,12 +83,12 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Surname";
             // 
-            // textBox2
+            // tbSurname
             // 
-            this.textBox2.Location = new System.Drawing.Point(72, 90);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 4;
+            this.tbSurname.Location = new System.Drawing.Point(72, 90);
+            this.tbSurname.Name = "tbSurname";
+            this.tbSurname.Size = new System.Drawing.Size(100, 23);
+            this.tbSurname.TabIndex = 4;
             // 
             // label3
             // 
@@ -95,12 +99,12 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Card No.";
             // 
-            // textBox3
+            // tbCardNo
             // 
-            this.textBox3.Location = new System.Drawing.Point(72, 119);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 6;
+            this.tbCardNo.Location = new System.Drawing.Point(72, 119);
+            this.tbCardNo.Name = "tbCardNo";
+            this.tbCardNo.Size = new System.Drawing.Size(100, 23);
+            this.tbCardNo.TabIndex = 6;
             // 
             // btmCustRemove
             // 
@@ -122,25 +126,41 @@
             this.btnCustCancel.UseVisualStyleBackColor = true;
             this.btnCustCancel.Click += new System.EventHandler(this.btnCustCancel_Click);
             // 
+            // btnBuy
+            // 
+            this.btnBuy.Location = new System.Drawing.Point(83, 158);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(75, 23);
+            this.btnBuy.TabIndex = 10;
+            this.btnBuy.Text = "Buy";
+            this.btnBuy.UseVisualStyleBackColor = true;
+            this.btnBuy.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // initialBindingSource
+            // 
+            this.initialBindingSource.DataSource = typeof(FuelStation.EF.Migrations.initial);
+            // 
             // CustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.btnCustCancel);
             this.Controls.Add(this.btmCustRemove);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tbCardNo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbSurname);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbName);
             this.Controls.Add(this.btnCustSave);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gvCustomers);
             this.Name = "CustomersForm";
             this.Text = "Customers";
             this.Load += new System.EventHandler(this.CustomersForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvCustomers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.initialBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,15 +168,17 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView gvCustomers;
         private Button btnCustSave;
-        private TextBox textBox1;
+        private TextBox tbName;
         private Label label1;
         private Label label2;
-        private TextBox textBox2;
+        private TextBox tbSurname;
         private Label label3;
-        private TextBox textBox3;
+        private TextBox tbCardNo;
         private Button btmCustRemove;
         private Button btnCustCancel;
+        private Button btnBuy;
+        private BindingSource initialBindingSource;
     }
 }

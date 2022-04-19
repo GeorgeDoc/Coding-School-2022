@@ -26,6 +26,7 @@ namespace FuelStation.EF.Repositories {
                 throw new KeyNotFoundException($"Given id '{id}' was not found in database");
             }
             _context.Employees.Remove(foundEmployee);
+            // TODO: put him in a different list with a HireDateEnd
             await _context.SaveChangesAsync();
         }
 

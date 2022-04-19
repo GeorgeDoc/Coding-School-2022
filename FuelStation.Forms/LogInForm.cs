@@ -12,7 +12,8 @@ using System.Windows.Forms;
 namespace FuelStation.Forms {
     public partial class LogInForm : Form {
 
-        public string _userName { get; set; }
+        private HomeForm Home;
+        public string _username { get; set; }
         public string _password { get; set; }
 
         public LogInForm() {
@@ -31,11 +32,13 @@ namespace FuelStation.Forms {
         }
 
         private void btnLogin_Click(object sender, EventArgs e) {
-            User user = new User(_userName, _password);
+            //_password = tbPass.Text;
+            //_username = tbUsername.Text;
+            //User user = new User(_username, _password);
             // If authenticate true
-            HomeForm form = new HomeForm();
-
+            Home = new HomeForm();
+            Home.Show();
+            this.Hide();
         }
-        
     }
 }

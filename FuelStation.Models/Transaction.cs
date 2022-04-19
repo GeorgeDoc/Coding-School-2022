@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace FuelStation.Models {
     [Serializable]
     public class Transaction : BaseEntity {
+        public Guid Id { get; set; }
         public DateTime Date { get; set; }
         public Guid EmployeeID { get; set; }    
         public Guid CustomerID { get; set; }
